@@ -1,6 +1,10 @@
 import subprocess
 import init_value
 
+
+# train
+# fix config file before training
+
 command = 'python '
 command += init_value.research_dir + '/' + 'object_detection/model_main.py'
 command += ' ' + '--pipeline_config_path=' + init_value.project_dir + '/pet_faces/config/v2_quantized_pets/pipeline.config'

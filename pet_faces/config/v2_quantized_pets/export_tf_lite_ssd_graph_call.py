@@ -1,6 +1,8 @@
 import subprocess
 import init_value
 
+# ckpt to pb
+
 command = 'python '
 command += init_value.research_dir + '/' + 'object_detection/export_tflite_ssd_graph.py'
 command += ' ' + '--pipeline_config_path=' + init_value.project_dir + '/pet_faces/config/v2_quantized_pets/pipeline.config'

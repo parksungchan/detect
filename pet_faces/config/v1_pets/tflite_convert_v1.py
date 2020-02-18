@@ -22,4 +22,11 @@ import init_value
 
 
 
+# v1
+# tflite_convert --graph_def_file=/home/dev/detect/pet_faces/data/tflite_graph_v1_pets.pb --output_file=/home/dev/detect/pet_faces/output/detect_v1_pets_0213.tflite --output_format=TFLITE --input_shapes=1,300,300,3 --input_arrays=normalized_input_image_tensor --output_arrays='TFLite_Detection_PostProcess','TFLite_Detection_PostProcess:1','TFLite_Detection_PostProcess:2','TFLite_Detection_PostProcess:3' --mean_values=128 --std_dev_values=128 --allow_custom_ops
 
+# v2
+# tflite_convert --graph_def_file=/home/dev/detect/pet_faces/data/tflite_graph_v2_pets.pb --output_file=/home/dev/detect/pet_faces/output/detect_v2_pets_0213.tflite --output_format=TFLITE --input_shapes=1,300,300,3 --input_arrays=normalized_input_image_tensor --output_arrays='TFLite_Detection_PostProcess','TFLite_Detection_PostProcess:1','TFLite_Detection_PostProcess:2','TFLite_Detection_PostProcess:3' --inference_type=QUANTIZED_UINT8 --mean_values=128 --std_dev_values=128 --allow_custom_ops
+
+
+# python create_coco_tf_record.py --train_annotations_file=/home/dev/detect/pet_faces/data/via_export_coco_0217.json --val_annotations_file=/home/dev/detect/pet_faces/data/via_export_coco_0217.json --testdev_annotations_file=/home/dev/detect/pet_faces/data/via_export_coco_0217.json  --train_image_dir=../data/images/train --val_image_dir=../data/images/val --test_image_dir=../data/images/test --output_dir=/home/dev/detect/pet_faces/output/tf_record
